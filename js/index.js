@@ -2,6 +2,8 @@
 var intervalo;
 
 function carregarPagina(pagina, title){
+  // verifica se tem ancora, se não tiver não faz nada
+  if( typeof pagina === "undefined" || pagina == "#") return;
   // carrega a nova pagina e coloca na div #conteudo
   $("#conteudo").load(pagina);
   // Se tiver conteudo na variavel 'title', colocar no title da página
@@ -18,7 +20,7 @@ function carregarPagina(pagina, title){
   // window.onload seria equivalente ao main do java ou do C++
 window.onload = function () { 
 
-    $("body").on("click", "a", function(e){ 
+    $(".menu").on("click", "a", function(e){ 
 
       var pagina = $(this).attr("href"); 
       var title = $(this).attr("title");

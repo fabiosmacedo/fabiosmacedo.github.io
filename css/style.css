@@ -12,7 +12,19 @@
   padding-bottom: 55px;
 }
 
-/* --------------*/
+/* rodape */
+footer{
+  z-index: 1;
+}
+
+/* tela de login */
+.dropdown-menu.dropdown-menu-right.show {
+  width: 100vh;
+  padding: 10px;
+}
+
+/* --------------------------- */
+
 
 .gui-card__details .fa-cart-plus {
   left: 0;
