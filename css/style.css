@@ -14,27 +14,17 @@
 
 /* --------------*/
 
-
-body,
-html {
-  padding: 0 10px;
-  margin: 0;
-  background: var(--cor-fundo);
-  color: var(--cor-fonte);
-  font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.gui-card__details .fa-cart-plus {
+  left: 0;
   width: 100%;
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: -13px;
+  text-align: center;
+  z-index: 2;
+
 }
+
 * {
   box-sizing: border-box;
 }
@@ -177,20 +167,19 @@ a:hover {
 }
 
 
-.gui-card__details:after {
+.gui-card__details .fa-cart-plus:after  {
   margin-top: -25px;
   margin-left: -25px;
   width: 50px;
   height: 50px;
-  border: 3px solid #ecf0f1;
+  border: 3px solid #000;
   line-height: 50px;
   text-align: center;
   border-radius: 100%; 
   z-index: 1;
 }
 
-.gui-card__details:before {  
-  content: '\f217';
+.gui-card__details .fa-cart-plus:before {  
   left: 0;
   width: 100%;
   font-size: 30px;
@@ -198,7 +187,7 @@ a:hover {
   margin-top: -13px;
   text-align: center;
   z-index: 2;
-  color: #ecf0f1;
+  color: #000;
 }
 .gui-card:hover .gui-card__details {
   opacity: 1;
