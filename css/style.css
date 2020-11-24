@@ -18,8 +18,13 @@ footer{
 }
 
 /* tela de login */
+.entrada .dropdown-menu.dropdown-menu-right.show {
+  width: 45vh;
+  padding: 10px;
+}
+/* form de cadastro */
 .dropdown-menu.dropdown-menu-right.show {
-  width: 100vh;
+  width: 80vh;
   padding: 10px;
 }
 
@@ -41,11 +46,11 @@ footer{
   box-sizing: border-box;
 }
 
-h1,
-p {
+.jumbotron h1,
+.jumbotron p {
   text-align: center;
 }
-p {
+.jumbotron p {
   width: 100%;
   max-width: 500px;
   margin: auto;

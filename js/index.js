@@ -1,6 +1,39 @@
 // variavel que vai armazenar o setInterval do scroll veritical
 var intervalo;
 
+
+  // página totalmente carregada (DOM, imagens etc.)
+  // window.onload seria equivalente ao main do java ou do C++
+window.onload = function () { 
+    // carrega a pagina menu
+    $("menu").load("menu.html");
+    // carrega a pgina home
+    $("#conteudo").load("home.html");
+    // carrega a pagina rodape
+    $("footer").load("rodape.html");
+    // coloca a ação 'click' nos links dentro da classe menu depois de ser carregada no corpo html
+    $("body").on("click", ".menu a", function(e){
+      // entra nessa função quando clicar no link dentro da classe menu
+      // pega o atributo href
+      var pagina = $(this).attr("href"); 
+      // pega o atributo title
+      var title = $(this).attr("title"); 
+      // chama a função para carregar a pg e trocar o title
+      carregarPagina(pagina, title);
+      // o 'e' se refere ao elemento que está sendo referenciado no momento do 'click'
+      // o metodo 'preventDefault()' anula o efeito do link ou do elemento que estiver sendo usado
+      e.preventDefault();
+
+    });
+    // chama a função para inserir o carroseul nos itens
+    efeitoCarroseul();
+} 
+
+/**
+ * função para para carregar a pagina e colocar o titulo na pagina de destino
+ * @param {*} pagina 
+ * @param {*} title 
+ */
 function carregarPagina(pagina, title){
   // verifica se tem ancora, se não tiver não faz nada
   if( typeof pagina === "undefined" || pagina == "#") return;
@@ -10,36 +43,11 @@ function carregarPagina(pagina, title){
   if( typeof title != "undefined"){
     document.title = title;
   }
-  
-  
 }
 
 
-
-  // página totalmente carregada (DOM, imagens etc.)
-  // window.onload seria equivalente ao main do java ou do C++
-window.onload = function () { 
-
-    $(".menu").on("click", "a", function(e){ 
-
-      var pagina = $(this).attr("href"); 
-      var title = $(this).attr("title");
-
-      console.log("nav-link", pagina);  
-
-      carregarPagina(pagina, title);
-
-      e.preventDefault();
-
-    })
-
-    efeitoCarroseul();
-
-
-} 
-
 /**
- * 
+ * Função associar aos elementos o evento 'mouseover' e 'mouseout' para disparar a função do efeito de scroll vertical
  */
 function efeitoCarroseul(){  
   // quando passar o mouse emcima da seta
