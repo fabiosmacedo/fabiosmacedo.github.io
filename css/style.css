@@ -3,6 +3,7 @@
 /* declaraçao de variaveis Globais */
 :root{
   --cor-fundo: #f2f2f2;
+  --cor-rodape: #fff;
   --cor-fonte: #262626;
   --cor-handle: #f2f2f2;
 }
@@ -13,8 +14,8 @@
 }
 
 /* rodape */
-footer{
-  z-index: 1;
+.footer{
+  background-color: var(--cor-rodape);
 }
 
 /* tela de login */

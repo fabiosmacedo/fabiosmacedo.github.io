@@ -42,6 +42,15 @@ function carregarPagina(pagina, title){
   // Se tiver conteudo na variavel 'title', colocar no title da página
   if( typeof title != "undefined"){
     document.title = title;
+  }else{
+    // se não tiver um title
+    // pegar o nome da pagina, tirar a estensão    
+    // split retona um array, por isso usamos o [0], para pegar a string que esta lá dentro
+    title = pagina.split('.', 1)[0];
+    // aqui deixamos a primeira letra maiuscula
+    title = title.substring(0,1).toUpperCase().concat(title.substring(1));
+    // colocamos no title da pagina
+    document.title = title;
   }
 }
 
